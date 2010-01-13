@@ -1,0 +1,10 @@
+<h1>RO的悪魔の辞典</h1>
+
+<table>
+<tr><th>RO用語一覧</th></tr>
+<% @dict_list.each do |dict| %>
+<tr><td>
+<a href='/word/<%=h dict.word %>'><%=h dict.word %></a>
+</td></tr>
+<% end %>
+</table>

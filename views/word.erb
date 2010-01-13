@@ -1,0 +1,15 @@
+<a href='/'>戻る</a><br/>
+<br/>
+<table>
+<tr>
+<td><b><%=h @dict.word %></b></td>
+</tr>
+<% @dict.explanation_list.each.with_index do |exp, i| %>
+<tr>
+<td><%= i+1 %>.</td>
+</tr>
+<tr>
+<td><%= conv_lines(exp) %></td>
+</tr>
+<% end %>
+</table>

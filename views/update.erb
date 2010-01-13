@@ -1,0 +1,33 @@
+<form method='post' name='word_form' action='/admin/regist_word'>
+<input type='submit' value='更新'><br />
+<input type='hidden' name='count' value='5'>
+<table border='1'>
+<tr>
+<td>word</td>
+<td>
+<input type='hidden' name='word' value='<%= @dict.word %>'>
+<%= @dict.word %>
+</td>
+</tr>
+<% @dict.explanation_list.each.with_index do |exp, i| %>
+<tr>
+<td><%= i+1 %></td>
+<td>
+<textarea name='exp_<%= i+1 %>' rows='5' cols='60'><%= exp %></textarea>
+</td>
+</tr>
+<% end %>
+<% if @dict.size < 5 %>
+  <% ((@dict.size+1)..5).each do |i| %>
+<tr>
+<td><%= i %></td>
+<td>
+<textarea name='exp_<%= i %>' rows='5' cols='60'></textarea>
+</td>
+</tr>
+  <% end %>
+<% end %>
+</table>
+</form>
+<br />
+<a href='/admin'>戻る</a>

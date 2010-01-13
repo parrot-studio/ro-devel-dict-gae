@@ -1,0 +1,20 @@
+<form method='post' name='word_form' action='/admin/regist_word'>
+<input type='submit' value='追加'><br />
+<input type='hidden' name='count' value='5'>
+<table border='1'>
+<tr>
+<td>word</td>
+<td><input type='text' name='word' size='60'></td>
+</tr>
+<% (1..5).each do |i| %>
+<tr>
+<td><%= i %></td>
+<td>
+<textarea name='exp_<%= i %>' rows='5' cols='60'></textarea>
+</td>
+</tr>
+<% end %>
+</table>
+</form>
+<br />
+<a href='/admin'>戻る</a>

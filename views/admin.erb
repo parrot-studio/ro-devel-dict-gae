@@ -1,0 +1,17 @@
+<a href='/admin/add'>新規登録</a><br/>
+<br/>
+<table border='1'>
+<tr>
+<td>word</td><td></td>
+</tr>
+<% @dict_list.each do |dict| %>
+<tr>
+<td>
+<a href='/admin/update/<%= dict.id %>'><%=h dict.word %></a>
+</td>
+<td>
+<a href='/admin/delete/<%= dict.id %>'>削除</a>
+</td>
+</tr>
+<% end %>
+</table>
